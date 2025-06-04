@@ -21,6 +21,10 @@ a {
   color: inherit;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* Container */
 .container {
   width: 90%;
@@ -248,7 +252,7 @@ footer {
   border-top: 2px solid #444;
 }
 
-/* Animations */
+/* Animations for sections */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -282,7 +286,7 @@ section {
   animation-delay: 1.2s;
 }
 
-/* Responsive for small screens */
+/* Responsive adjustments for small screens */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
