@@ -2,11 +2,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Feyi's Portfolio</title>
+    <title>Professional Website Developer in Nigeria</title>
     <link rel="stylesheet" href="css/styles.css" />
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
     <!-- Font Awesome -->
@@ -18,28 +20,27 @@
   <body>
     <!-- Navigation Sidebar -->
     <nav>
+      <div class="mylogo">F</div>
       <ul>
         <li>
-          <a href="#about"><i class="fas fa-user"></i> About</a>
+          <a href="#about">About</a>
         </li>
         <li>
-          <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
+          <a href="#services">Services</a>
         </li>
+
         <li>
-          <a href="#education"
-            ><i class="fas fa-graduation-cap"></i> Education</a
-          >
+          <a href="#skills">Skills</a>
         </li>
+
         <li>
-          <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-        </li>
-        <li>
-          <a href="#interests"><i class="fas fa-heart"></i> Interests</a>
-        </li>
-        <li>
-          <a href="#projects"><i class="fas fa-folder-open"></i> Projects</a>
+          <a href="#projects">Projects</a>
         </li>
       </ul>
+
+      <button>
+        <a href="https://calendly.com/oluwafeyisolaayoola/30min">Book a call</a>
+      </button>
     </nav>
 
     <!-- Main Content -->
@@ -47,13 +48,13 @@
       <!-- Hero / About -->
       <section id="about" class="hero">
         <img
-          src="assets/img/profil"
-          alt="Profile picture of OluwaFeyisola Ayoola"
+          src="assets/img/Screenshot_20241107-104727_Video_Player-removebg-preview.png"
+          alt="Profile picture of Oluwafeyisola Ayoola"
         />
-        <h1>OluwaFeyisola Ayoola</h1>
-        <p>Creative Web Developer | Problem Solver | Tech Enthusiast</p>
+        <h1>Oluwafeyisola Ayoola</h1>
+        <p>3+ years experience | 100% satisfaction</p>
         <button class="cta-btn" onclick="window.location.href='#projects'">
-          Explore My Work
+          View My Work
         </button>
       </section>
 
@@ -61,122 +62,84 @@
       <section id="about-info">
         <div class="container">
           <h2>About Me</h2>
+          <div class="about">
+            <p>
+              Hi! I'm Feyi — a professional web developer who builds responsive,
+              quick websites that support online business expansion. In order to
+              provide outstanding user experiences, I specialise in contemporary
+              web development utilising React, Next.js, and cutting-edge
+              technologies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <h2>What I Offer</h2>
+        <div class="item">
+          <i class="fa-solid fa-mobile" style="font-size: 70px"></i><br /><br />
+          <h3>Web Design Services</h3>
           <p>
-            Innovative web developer with a proven track record of delivering
-            user-centered websites and applications that increase engagement and
-            drive results. Skilled in translating complex requirements into
-            scalable solutions, with a focus on performance and accessibility.
-            Passionate about continuous learning and applying best practices to
-            solve real-world problems.
+            I create visually appealing and user-centric designs that align with
+            your brand identity. Ensuring your website looks great on all
+            devices, from desktops to smartphones.
+          </p>
+          <br />
+          <p><i class="fa-regular fa-circle-check"></i> Custom UI/UX Design</p>
+          <p><i class="fa-regular fa-circle-check"></i> Responsive Design</p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Cross-browser
+            compatibility testing
+          </p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Mobile-optimized web
+            design
           </p>
         </div>
-      </section>
+        <div class="item">
+          <i class="fas fa-globe" style="font-size: 70px"></i><br /><br />
+          <h3>Full Stack Development</h3>
 
-      <!-- Experience -->
-      <section id="experience">
-        <h2>Professional Experience</h2>
-        <div class="experience">
-          <div class="item">
-            <h3>Web Developer | Freelance & Personal Projects</h3>
-            <p>
-              <strong
-                >Led the development of 15+ high-impact websites, increasing
-                client engagement by an average of 30% and improving site speed
-                by up to 40%.</strong
-              >
-            </p>
-            <ul>
-              <li>
-                Optimized website performance, resulting in a 25% increase in
-                organic traffic through SEO best practices.
-              </li>
-              <li>
-                Built responsive interfaces with modern frameworks, boosting
-                mobile user satisfaction scores by 20%.
-              </li>
-              <li>
-                Integrated APIs that enhanced functionality, reducing manual
-                data entry by 50% for clients.
-              </li>
-              <li>
-                Delivered projects 15% under deadline, ensuring high client
-                satisfaction and repeat business.
-              </li>
-            </ul>
-            <small>2017 – Present</small>
-          </div>
+          <p>
+            From frontend experience to backend APIs, I build complete web
+            solutions. I work with modern stacks to deliver apps that are
+            scalable, maintainable, and ready for real-world users.
+          </p>
+          <br />
 
-          <div class="item">
-            <h3>Junior Web Developer | Tech Startup Intern</h3>
-            <p>
-              <strong
-                >Contributed to a team that launched a SaaS platform used by
-                10,000+ users, improving onboarding speed and user
-                retention.</strong
-              >
-            </p>
-            <ul>
-              <li>
-                Developed frontend features that increased user engagement time
-                by 15%.
-              </li>
-              <li>
-                Collaborated with designers to implement UI improvements,
-                reducing bounce rates by 10%.
-              </li>
-              <li>
-                Enhanced backend functionality, leading to a 20% reduction in
-                server response times.
-              </li>
-            </ul>
-            <small>2019 – 2020</small>
-          </div>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> E-commerce website
+            Development
+          </p>
+          <p><i class="fa-regular fa-circle-check"></i> RESTful Api's</p>
 
-          <div class="item">
-            <h3>Certifications & Continuous Learning</h3>
-            <p>
-              <strong
-                >Earned multiple industry-recognized certifications and actively
-                contribute to open-source projects, demonstrating commitment to
-                growth and mastery.</strong
-              >
-            </p>
-            <ul>
-              <li>Google Python Certification (2021)</li>
-              <li>Udemy Certified Front-End & PHP Developer (2022)</li>
-              <li>
-                Regular participant in hackathons and tech forums, staying
-                abreast of emerging trends.
-              </li>
-            </ul>
-          </div>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Server Side Integration
+          </p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Real-time Application
+          </p>
         </div>
-      </section>
-
-      <!-- Education -->
-      <section id="education">
-        <h2>Education</h2>
-        <div class="education">
-          <div class="item">
-            <h3>University of Ilorin</h3>
-            <p>BSc in Computer Science | 2019 – 2025</p>
-            <small
-              >Relevant coursework: Data Structures, Algorithms, System
-              Programming, Java, C, Internet Tech, Microprocessors.</small
-            >
-          </div>
-          <div class="item">
-            <h3>Hadex High School</h3>
-            <p>Secondary School | 2011 – 2017</p>
-          </div>
-          <div class="item">
-            <h3>Certifications</h3>
-            <ul>
-              <li>Python | Google Programming Hub</li>
-              <li>Front-End Web Development | Udemy</li>
-              <li>PHP & MySQL | Udemy</li>
-            </ul>
-          </div>
+        <div class="item">
+          <i class="fas fa-search" style="font-size: 70px"></i><br /><br />
+          <h3>Performance Optimization</h3>
+          <p>
+            I offer services to enhance the speed and efficiency of your
+            website, ensuring a smooth user experience. Implementing on-page SEO
+            strategies to boost your site's visibility in search engines.
+          </p>
+          <br />
+          <p><i class="fa-regular fa-circle-check"></i> SEO Enhancements</p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Website speed
+            optimisation
+          </p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Monitoring and Analysis
+          </p>
+          <p>
+            <i class="fa-regular fa-circle-check"></i> Performance testing tools
+          </p>
         </div>
       </section>
 
@@ -188,53 +151,26 @@
           <div class="skill">JavaScript</div>
           <div class="skill">HTML5</div>
           <div class="skill">CSS3</div>
-          <div class="skill">PHP</div>
+          <div class="skill">Express</div>
           <div class="skill">Python</div>
-
+          <div class="skill">Tailwind CSS</div>
           <div class="skill">MySQL</div>
           <div class="skill">MongoDB</div>
           <div class="skill">Node.js</div>
           <div class="skill">React</div>
-          <div class="skill">Git</div>
           <div class="skill">GitHub</div>
-          <div class="skill">Responsive Design</div>
-
-          <div class="skill">SEO</div>
-          <div class="skill">APIs</div>
           <div class="skill">RESTful APIs</div>
         </div>
-        <h3>Soft Skills</h3>
-        <p>
-          Effective communicator, problem solver, quick learner, adaptable, team
-          collaborator, and committed to delivering quality work under tight
-          deadlines.
-        </p>
-      </section>
-
-      <!-- Interests -->
-      <section id="interests">
-        <h2>Interests</h2>
-        <ul>
-          <li class="interest"><i class="fas fa-walking"></i> Walking</li>
-          <li class="interest">
-            <i class="fab fa-youtube"></i> Watching YouTube
-          </li>
-          <li class="interest">
-            <i class="fas fa-football-ball"></i> Football
-          </li>
-          <li class="interest"><i class="fas fa-gamepad"></i> Gaming</li>
-          <li class="interest"><i class="fas fa-music"></i> Music</li>
-        </ul>
       </section>
 
       <!-- Projects -->
       <section id="projects" style="padding: 50px 0">
-        <h2>My Projects</h2>
+        <h2>My Works</h2>
         <div class="projects-container">
           <!-- Sample project card -->
           <div class="project-card">
             <img
-              src="assets/img/screenshot-1749047350978"
+              src="assets/img/Screenshot_11-6-2025_162519_localhost.jpeg"
               alt="Project 1 screenshot"
             />
             <div class="project-info">
@@ -243,19 +179,57 @@
                 Designed and developed a responsive portfolio showcasing my
                 skills and projects, increasing inquiries by 40%.
               </p>
-              <a href="https://hellv99.github.io/MyPortfolio/" target="_blank"
-                >View on GitHub</a
-              >
-              |
+              <div class="skills-list">
+                <div class="skill">Html</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Css</div>
+              </div>
+              <br />
               <a href="https://hellv99.github.io/MyPortfolio/" target="_blank"
                 >Live Demo</a
               >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/img/Screenshot 2025-05-29 202453.png"
+              alt="Jollof Junction"
+            />
+            <div class="project-info">
+              <h3>Jollof Junction</h3>
+              <p>Jollof Junction is a restaurant based in lagos, Nigeria</p>
+              <div class="skills-list">
+                <div class="skill">React</div>
+                <div class="skill">JavaScript</div>
+                <div class="skill">Css</div>
+              </div>
+              <br />
+
+              <a href="#" target="_blank">Live Demo</a>
             </div>
           </div>
           <!-- Add more project cards as needed -->
         </div>
       </section>
 
+      <div class="whatsapp">
+        <a href="https://wa.me/2348024543361?text="
+          ><svg viewBox="0 0 32 32" class="whatsapp-ico">
+            <path
+              d=" M19.11 17.205c-.372 0-1.088 1.39-1.518 1.39a.63.63 0 0 1-.315-.1c-.802-.402-1.504-.817-2.163-1.447-.545-.516-1.146-1.29-1.46-1.963a.426.426 0 0 1-.073-.215c0-.33.99-.945.99-1.49 0-.143-.73-2.09-.832-2.335-.143-.372-.214-.487-.6-.487-.187 0-.36-.043-.53-.043-.302 0-.53.115-.746.315-.688.645-1.032 1.318-1.06 2.264v.114c-.015.99.472 1.977 1.017 2.78 1.23 1.82 2.506 3.41 4.554 4.34.616.287 2.035.888 2.722.888.817 0 2.15-.515 2.478-1.318.13-.33.244-.73.244-1.088 0-.058 0-.144-.03-.215-.1-.172-2.434-1.39-2.678-1.39zm-2.908 7.593c-1.747 0-3.48-.53-4.942-1.49L7.793 24.41l1.132-3.337a8.955 8.955 0 0 1-1.72-5.272c0-4.955 4.04-8.995 8.997-8.995S25.2 10.845 25.2 15.8c0 4.958-4.04 8.998-8.998 8.998zm0-19.798c-5.96 0-10.8 4.842-10.8 10.8 0 1.964.53 3.898 1.546 5.574L5 27.176l5.974-1.92a10.807 10.807 0 0 0 16.03-9.455c0-5.958-4.842-10.8-10.802-10.8z"
+              fill-rule="evenodd"
+            ></path></svg
+        ></a>
+      </div>
+
+      <section>
+        <div>
+          <h2>Contact Me</h2>
+          <p><i class="fas fa-envelope"></i> oluwafeyisolaayoola@gmail.com</p>
+          <p><i class="fas fa-phone"></i> +2348024543361</p>
+        </div>
+      </section>
       <!-- Footer -->
       <footer>
         <p>© 2025 OluwaFeyisola Ayoola. All rights reserved.</p>

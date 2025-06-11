@@ -8,11 +8,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Body with top padding to accommodate sticky nav */
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #0d0d0d;
   color: #f0f0f0;
   line-height: 1.6;
+  padding-top: 80px; /* space for centered sticky navbar */
 }
 
 /* Links */
@@ -25,83 +27,123 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Container */
+/* Container for content */
 .container {
-  width: 90%;
-
-  max-width: 1200px;
   margin: auto;
+  margin-bottom: 10px;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
-/* Navigation Sidebar */
+/* Centered, sticky, rounded navbar */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 240px;
-  height: 100vh;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1000px;
   background-color: #222;
-  padding-top: 70px;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 30px; /* full rounded edges */
+  z-index: 999;
   transition: background-color 0.3s;
-  z-index: 998;
 }
 
-nav:hover {
-  background-color: #333;
+/* Optional: title or logo inside navbar */
+.nav-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
 }
 
+/* Hamburger menu button (hidden on large screens) */
+.menu-toggle {
+  font-size: 1.8em;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* shown on small screens via media query */
+}
+
+/* Navigation links list */
 nav ul {
   list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
   padding: 0;
 }
 
-nav ul li {
-  margin: 15px 0;
-}
-
+/* Individual nav link styles */
 nav ul li a {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
   font-weight: 600;
   font-size: 1.1em;
-  color: #eee;
+  padding: 8px 12px;
+  border-radius: 80px;
   transition: background 0.2s, transform 0.2s;
+  color: #eee;
+  text-decoration: none;
 }
 
 nav ul li a:hover {
-  background-color: #444;
-  transform: translateX(4px);
+  color: #beb6b6;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+/*Book button */
+
+nav button {
+  border-radius: 80px;
+  border: none;
+}
+nav button a {
+  font-size: 1rem;
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 10px 10px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 80px;
 }
 
-/* Main Content area */
+nav button a:hover {
+  border: none;
+
+  text-decoration: none;
+}
+/* Main content area */
 .main {
-  margin-left: 240px;
-  padding: 80px 30px 30px 30px;
+  padding: 80px 20px 30px 20px; /* space for sticky nav */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Hero / About */
-
+/* Hero Section */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 50px 20px;
-  opacity: 1 !important;
-  display: flex !important;
-  visibility: visible !important;
   background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 50px;
-  animation: fadeIn 1s ease-out;
+  /* Ensure hero doesn't get hidden behind navbar */
+  margin-top: 0;
 }
 
 .hero img {
-  width: 180px;
-  height: 180px;
+  max-width: 180px;
+  width: 100%;
+  height: 190px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid #fff;
@@ -147,24 +189,13 @@ nav ul li a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Add fadeIn animation if not already present */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Section Titles */
+/* Section titles styling */
 h2 {
   font-size: 2em;
   margin-bottom: 25px;
   position: relative;
   display: inline-block;
+  width: 100%;
   padding-bottom: 8px;
   color: #f0f0f0;
 }
@@ -179,14 +210,48 @@ h2::after {
   border-radius: 2px;
 }
 
-/* Experience & Education Items */
-.item {
+/* About section */
+.about {
   background-color: #1f1f1f;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.about:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about h3 {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.about p {
+  font-size: 1.1em;
+  color: #ddd;
+}
+
+/* Services Items */
+#services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  background-color: #1f1f1f;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 340px;
+  max-width: 340px;
+  min-height: 50vh;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s, box-shadow 0.3s;
 }
 
 .item:hover {
@@ -204,14 +269,7 @@ h2::after {
   color: #ddd;
 }
 
-.item small {
-  margin-top: 10px;
-  display: inline-block;
-  font-size: 0.9em;
-  color: #aaa;
-}
-
-/* Skills */
+/* Skills section */
 #skills h3 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -235,30 +293,60 @@ h2::after {
   transform: scale(1.05);
 }
 
-/* Interests */
-#interests ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-  list-style: none;
-}
-.interest {
-  background-color: #222;
-  padding: 15px;
-  border-radius: 12px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1em;
-  transition: background-color 0.3s, transform 0.2s;
-  cursor: pointer;
-}
-.interest:hover {
-  background-color: #444;
-  transform: translateY(-4px);
+/*Projects*/
+
+.project-card img {
+  width: 50%;
+  margin-top: 30px;
 }
 
-/* Footer */
+.project-card img:hover {
+  transform: scale(1.08);
+}
+
+.project-card a {
+  background-color: #333;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1em;
+  transition: background 0.7s, transform 0.2s;
+}
+.project-card a:hover {
+  background-color: #000000;
+  text-decoration: none;
+}
+
+.project-card h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  margin-bottom: 10px;
+}
+
+/*whatsapp*/
+.whatsapp-ico {
+  fill: white;
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  background-color: #4dc247;
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.whatsapp-ico:hover {
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.7);
+}
+
+/* Footer styles */
 footer {
   text-align: center;
   padding: 25px 20px;
@@ -269,7 +357,7 @@ footer {
   border-top: 2px solid #444;
 }
 
-/* Animations for sections */
+/* Animate sections in */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -280,6 +368,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 section {
   opacity: 0;
   animation: fadeInUp 1s forwards;
@@ -287,11 +376,8 @@ section {
 #about {
   animation-delay: 0.2s;
 }
-#experience {
+#services {
   animation-delay: 0.4s;
-}
-#education {
-  animation-delay: 0.6s;
 }
 #skills {
   animation-delay: 0.8s;
@@ -305,17 +391,71 @@ section {
 
 /* Responsive adjustments for small screens */
 @media (max-width: 768px) {
+  /* Show hamburger menu button */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Make nav links hidden by default on small screens */
+  nav ul {
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 20px;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 10px 0;
+    display: none; /* hidden by default */
+  }
+
+  /* Show menu when active */
+  nav.active ul {
+    display: flex;
+  }
+
+  /* Adjust body top padding for small screens */
   body {
-    font-size: 14px;
+    padding-top: 60px;
   }
-  nav {
-    width: 180px;
+
+  /* Style the hero section for small screens */
+  .hero {
+    padding: 70px 20px;
+    margin-top: 20px;
   }
-  .main {
-    margin-left: 180px;
-    padding: 60px 20px;
+
+  /* Make hero image smaller on small screens */
+  .hero img {
+    max-width: 150px;
   }
-  .project-card {
-    flex: 1 1 calc(100% - 20px);
+
+  /* Stack service items vertically on small screens */
+  #services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    max-width: 90%;
+    min-width: 90%;
+    margin: 15px 0;
+  }
+
+  /* Reduce font sizes for smaller screens */
+  h1 {
+    font-size: 2em;
+  }
+  p {
+    font-size: 1em;
+  }
+  .cta-btn {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  h1 {
+    font-size: 1.8em;
   }
 }
