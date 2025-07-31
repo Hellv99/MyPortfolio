@@ -387,6 +387,7 @@ section {
 }
 #projects {
   animation-delay: 1.2s;
+  padding: 50px 0;
 }
 
 /* Responsive adjustments for small screens */

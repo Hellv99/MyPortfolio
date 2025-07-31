@@ -16,6 +16,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/img/Picsart_25-06-13_21-18-57-036.jpg"
+    />
   </head>
   <body>
     <!-- Navigation Sidebar -->
@@ -163,18 +168,20 @@
           <div class="skill">React</div>
           <div class="skill">GitHub</div>
           <div class="skill">RESTful APIs</div>
+          <div class="skill">WordPress</div>
         </div>
       </section>
 
       <!-- Projects -->
-      <section id="projects" style="padding: 50px 0">
+      <section id="projects">
         <h2>My Works</h2>
         <div class="projects-container">
           <!-- Sample project card -->
 
           <div class="project-card">
             <img
-              src="assets/img/Screenshot 2025-05-29 202453.png"
+              loading="lazy"
+              src="assets/img/Screenshot 2025-05-29 202453.jpg"
               alt="Jollof Junction"
             />
             <div class="project-info">
@@ -193,7 +200,8 @@
 
           <div class="project-card">
             <img
-              src="assets/img/Screenshot_2-7-2025_114334_127.0.0.1.jpeg"
+              loading="lazy"
+              src="assets/img/Screenshot_30-7-2025_75855_afrowigs.vercel.app.jpeg"
               alt="AfroGlamWigs"
             />
             <div class="project-info">
@@ -234,6 +242,6 @@
         <p>© 2025 OluwaFeyisola Ayoola. All rights reserved.</p>
       </footer>
     </div>
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" async></script>
   </body>
 </html>
