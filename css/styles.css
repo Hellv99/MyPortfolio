@@ -10,11 +10,11 @@ html {
 
 /* Body with top padding to accommodate sticky nav */
 body {
-  font-family: "Space Mono", monospace;
+  font-family: "Montserrat", sans-serif;
   background-color: #0d0d0d;
   color: #f0f0f0;
   line-height: 1.6;
-  padding-top: 80px;
+  padding-top: 80px; /* space for centered sticky navbar */
 }
 
 /* Links */
@@ -25,41 +25,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-/* Loader */
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #1f2937;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  transition: opacity 0.5s ease;
-}
-
-.loader.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #3b82f6;
-  border-top: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 /* Container for content */
@@ -84,9 +49,26 @@ nav {
   justify-content: space-between;
   padding: 10px 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 30px;
+  border-radius: 30px; /* full rounded edges */
   z-index: 999;
   transition: background-color 0.3s;
+}
+
+/* Optional: title or logo inside navbar */
+.nav-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Hamburger menu button (hidden on large screens) */
+.menu-toggle {
+  font-size: 1.8em;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: none; /* shown on small screens via media query */
 }
 
 /* Navigation links list */
@@ -104,21 +86,9 @@ nav ul li a {
   font-size: 1.1em;
   padding: 8px 12px;
   border-radius: 80px;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: background 0.2s, transform 0.2s;
   color: #eee;
-  position: relative;
   text-decoration: none;
-}
-
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #3b82f6;
-  transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -126,25 +96,15 @@ nav ul li a:hover {
   text-decoration: none;
   transform: translateY(-2px);
 }
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* Book button */
-.book {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+/*Book button */
 
 .book:hover {
   text-decoration: none;
   color: #beb6b6;
-  transform: scale(1.1);
 }
-
 /* Main content area */
 .main {
-  padding: 80px 20px 30px 20px;
+  padding: 80px 20px 30px 20px; /* space for sticky nav */
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -160,40 +120,8 @@ nav ul li a:hover::after {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 50px;
+  /* Ensure hero doesn't get hidden behind navbar */
   margin-top: 0;
-}
-
-/* Hero animation */
-.hero h1,
-.hero p,
-.hero .cta-btn,
-.hero img {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-.hero img {
-  animation-delay: 0.1s;
-}
-
-.hero h1 {
-  animation-delay: 0.2s;
-}
-
-.hero p {
-  animation-delay: 0.3s;
-}
-
-.hero .cta-btn {
-  animation-delay: 0.4s;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .hero img {
@@ -246,12 +174,12 @@ nav ul li a:hover::after {
 }
 
 /* Font Awesome icons */
+
 .fas.fa-search,
 .fas.fa-globe,
 .fa-solid.fa-mobile {
   font-size: 70px;
 }
-
 /* Section titles styling */
 h2 {
   font-size: 2em;
@@ -271,32 +199,6 @@ h2::after {
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   margin-top: 10px;
   border-radius: 2px;
-}
-
-/* Scroll-triggered animations */
-.section,
-.project-card,
-.skill,
-.item,
-.about {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.section.visible,
-.project-card.visible,
-.skill.visible,
-.item.visible,
-.about.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card,
-.skill,
-.item {
-  transition-delay: calc(0.1s * var(--index));
 }
 
 /* About section */
@@ -364,13 +266,11 @@ h2::after {
   margin-bottom: 10px;
   font-weight: 600;
 }
-
 .skills-list {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
 }
-
 .skill {
   background-color: #333;
   padding: 10px 20px;
@@ -379,7 +279,6 @@ h2::after {
   font-size: 1em;
   transition: background 0.3s, transform 0.2s;
 }
-
 .skill:hover {
   background-color: #555;
   transform: scale(1.05);
@@ -456,7 +355,11 @@ h2::after {
   margin-bottom: 10px;
 }
 
-/* WhatsApp */
+.project-info {
+  margin-bottom: 20px;
+}
+
+/*whatsapp*/
 .whatsapp-ico {
   fill: white;
   width: 50px;
@@ -465,6 +368,7 @@ h2::after {
   background-color: #4dc247;
   border-radius: 50%;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -486,8 +390,50 @@ footer {
   border-top: 2px solid #444;
 }
 
+/* Animate sections in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+#about {
+  animation-delay: 0.3s;
+}
+#services {
+  animation-delay: 0.4s;
+}
+#skills {
+  animation-delay: 0.8s;
+}
+#interests {
+  animation-delay: 1s;
+}
+#projects {
+  animation-delay: 1.2s;
+  padding: 50px 0;
+}
+
 /* Responsive adjustments for small screens */
 @media (max-width: 768px) {
+  /* Disable heavy animations on mobile */
+  .project-overlay {
+    display: none;
+  }
+  /* Make nav links hidden by default on small screens */
+  nav ul {
+    display: none; /* hidden by default */
+  }
+
   /* Adjust body top padding for small screens */
   body {
     padding-top: 60px;
@@ -526,15 +472,24 @@ footer {
   .cta-btn {
     font-size: 1em;
   }
-
-  /* Disable heavy animations on mobile */
-  .project-overlay {
-    display: none;
-  }
 }
 
 @media (max-width: 480px) {
+  /* Further adjustments for very small screens */
   h1 {
     font-size: 1.8em;
+  }
+}
+@media (max-width: 400px) {
+  /* Further adjustments for very small screens */
+  .hero h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Disable heavy animations on mobile */
+  .lvp {
+    display: none;
   }
 }
