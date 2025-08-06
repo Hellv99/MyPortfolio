@@ -1,31 +1,31 @@
 /*!
- * Start Bootstrap - Resume v7.0.6 (https://startbootstrap.com/theme/resume)
- * Copyright 2013-2023 Start Bootstrap
- * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
+ * Portfolio animations and interactions
+ * Copyright 2025 OluwaFeyisola Ayoola
  */
-
-// Scripts
-
-window.addEventListener("DOMContentLoaded", (event) => {
-  // Activate Bootstrap scrollspy on the main nav element
-  const sideNav = document.body.querySelector("#sideNav");
-  if (sideNav) {
-    new bootstrap.ScrollSpy(document.body, {
-      target: "#sideNav",
-      rootMargin: "0px 0px -40%",
+window.addEventListener("DOMContentLoaded", () => {
+  // Hide loader after page load
+  const loader = document.querySelector(".loader");
+  if (loader) {
+    window.addEventListener("load", () => {
+      loader.classList.add("hidden");
+      setTimeout(() => loader.remove(), 500);
     });
   }
 
-  // Collapse responsive navbar when toggler is visible
-  const navbarToggler = document.body.querySelector(".navbar-toggler");
-  const responsiveNavItems = [].slice.call(
-    document.querySelectorAll("#navbarResponsive .nav-link")
+  // Scroll-triggered animations
+  const elements = document.querySelectorAll(
+    ".section, .project-card, .skill, .item, .about"
   );
-  responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener("click", () => {
-      if (window.getComputedStyle(navbarToggler).display !== "none") {
-        navbarToggler.click();
-      }
-    });
-  });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  elements.forEach((element) => observer.observe(element));
 });
